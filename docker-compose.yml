@@ -1,0 +1,10 @@
+version: "3"
+services:
+  activerecord-creating_foreign_keys:
+    build: .
+    volumes:
+      - ./:/usr/local/src/activerecord-creating_foreign_keys
+      - bundle:/usr/local/bundle
+    tty: true
+volumes:
+  bundle:
