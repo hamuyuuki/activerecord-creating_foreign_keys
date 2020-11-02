@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ActiveRecord::CreatingForeignKeys::VERSION
   s.authors     = ["hamuyuuki"]
   s.email       = ["13702378+hamuyuuki@users.noreply.github.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/hamuyuuki/activerecord-creating_foreign_keys"
   s.summary     = "Create FOREIGN KEY Constraints in a CREATE TABLE Statement"
   s.description = "`activerecord-creating_foreign_keys` creates FOREIGN KEY Constraints in a CREATE TABLE Statement."
   s.license     = "MIT"
@@ -19,5 +19,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.0"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rubocop"
+  s.add_development_dependency "rubocop-rails"
+  s.add_development_dependency "rubocop-performance"
+  s.add_development_dependency "rubocop-packaging"
 end
