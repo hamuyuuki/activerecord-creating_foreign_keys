@@ -6,5 +6,10 @@ services:
       - ./:/usr/local/src/activerecord-creating_foreign_keys
       - bundle:/usr/local/bundle
     tty: true
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
 volumes:
   bundle:
