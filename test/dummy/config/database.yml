@@ -13,5 +13,4 @@ mysql:
   adapter: mysql2
   encoding: utf8
   username: root
-  password: root
-  host: <%= ENV["CI"] ? "localhost" : "mysql" %>
+  host: <%= ENV["CI"] ? "127.0.0.1" : "mysql" %>
