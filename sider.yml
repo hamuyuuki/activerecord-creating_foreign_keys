@@ -1,0 +1,6 @@
+# https://help.sider.review/tools/ruby/rubocop
+linter:
+  rubocop:
+    gems:
+      - "rubocop-performance"
+      - "rubocop-rails"
