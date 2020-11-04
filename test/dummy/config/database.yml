@@ -14,4 +14,4 @@ mysql:
   encoding: utf8
   username: root
   password: root
-  host: mysql
+  host: <%= ENV["CI"] ? "localhost" : "mysql" %>
