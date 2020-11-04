@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.com/hamuyuuki/activerecord-creating_foreign_keys.svg?branch=master)](https://travis-ci.com/hamuyuuki/activerecord-creating_foreign_keys)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3cac3284bb083ea1f9cd/maintainability)](https://codeclimate.com/github/hamuyuuki/activerecord-creating_foreign_keys/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3cac3284bb083ea1f9cd/test_coverage)](https://codeclimate.com/github/hamuyuuki/activerecord-creating_foreign_keys/test_coverage)
+
 # activerecord-creating_foreign_keys
 `activerecord-creating_foreign_keys` create FOREIGN KEY Constraints in a CREATE TABLE Statement.
 
