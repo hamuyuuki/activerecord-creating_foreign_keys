@@ -1,3 +1,6 @@
+dist: trusty
+services:
+  - mysql
 language: ruby
 rvm:
   - 2.4.10
