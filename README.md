@@ -24,23 +24,23 @@ gem "activerecord-creating_foreign_keys"
 ## How to use
 You don't need to do anything after installing `activerecord-creating_foreign_keys`.
 
-You can know **Before** and **After** if `testings` is created.
+You can know **Before** and **After** if `articles` is created.
 
 ```
-create_table :testings do |t|
-  t.references :testing_parent, foreign_key: true
+create_table :articles do |t|
+  t.references :author, foreign_key: true
 end
 ```
 
 **Before**
 ```sql
-CREATE TABLE "testings" ("id" serial primary key, "testing_parent_id" integer);
-ALTER TABLE "testings" ADD CONSTRAINT "fk_rails_a196c353b2" FOREIGN KEY ("testing_parent_id") REFERENCES "testing_parents" ("id");
+CREATE TABLE `articles` (`id` int(11) auto_increment PRIMARY KEY, `author_id` int(11));
+ALTER TABLE `articles` ADD CONSTRAINT `fk_rails_e74ce85cbc` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`);
 ```
 
 **After**
 ```sql
-CREATE TABLE "testings" ("id" serial primary key, "testing_parent_id" integer, CONSTRAINT "fk_rails_a196c353b2" FOREIGN KEY ("testing_parent_id") REFERENCES "testing_parents" ("id"));
+CREATE TABLE `articles` (`id` int(11) auto_increment PRIMARY KEY, `author_id` int(11), CONSTRAINT `fk_rails_e74ce85cbc` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`));
 ```
 
 ## Limitation
