@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.authors     = ["hamuyuuki"]
   s.email       = ["13702378+hamuyuuki@users.noreply.github.com"]
   s.homepage    = "https://github.com/hamuyuuki/activerecord-creating_foreign_keys"
-  s.summary     = "Create FOREIGN KEY Constraints in a CREATE TABLE Statement"
-  s.description = "`activerecord-creating_foreign_keys` creates FOREIGN KEY Constraints in a CREATE TABLE Statement."
+  s.summary     = "Define FOREIGN KEY Constraints in a CREATE TABLE Statement"
+  s.description = "`activerecord-creating_foreign_keys` defines FOREIGN KEY Constraints in a CREATE TABLE Statement."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
