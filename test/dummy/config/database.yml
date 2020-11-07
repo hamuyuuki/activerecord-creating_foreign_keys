@@ -1,16 +1,6 @@
-default: &default
-  database: test
-
 test:
-  <<: *default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/test.sqlite3
-
-mysql:
-  <<: *default
   adapter: mysql2
+  database: test
   encoding: utf8
-  username: root
   host: <%= ENV["CI"] ? "127.0.0.1" : "mysql" %>
+  username: root

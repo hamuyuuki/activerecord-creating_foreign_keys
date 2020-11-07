@@ -63,6 +63,12 @@ class CreatingForeignKeysTest < ActiveSupport::TestCase
     x
   end
 
+  # ref: https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/migration/references_foreign_key_test.rb#L7L10
+  setup do
+    @connection = ActiveRecord::Base.connection
+    @connection.create_table(:testing_parents, force: true)
+  end
+
   # ref: https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/migration/references_foreign_key_test.rb#L12L15
   #      https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/test_case.rb#L8L10
   teardown do
@@ -71,13 +77,8 @@ class CreatingForeignKeysTest < ActiveSupport::TestCase
     SQLCounter.clear_log
   end
 
-  # ref: https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/migration/references_foreign_key_test.rb#L7L10
-  #      https://github.com/rails/rails/pull/20009/files#diff-753b84de930c3ef1f329af181b7fd7b21957e5c022765ca81748cda3002eb58dR35-R42
+  # ref: https://github.com/rails/rails/pull/20009/files#diff-753b84de930c3ef1f329af181b7fd7b21957e5c022765ca81748cda3002eb58dR35-R42
   test "foreign keys can be created in one query with MySQL" do
-    ActiveRecord::Base.establish_connection :mysql
-    @connection = ActiveRecord::Base.connection
-    @connection.create_table(:testing_parents, force: true)
-
     assert_queries(1) do
       @connection.create_table :testings do |t|
         t.references :testing_parent, foreign_key: true
