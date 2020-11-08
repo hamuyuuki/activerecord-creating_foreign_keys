@@ -38,7 +38,7 @@ class CreatingForeignKeysTest < ActiveSupport::TestCase
 
       # FIXME: this seems bad. we should probably have a better way to indicate
       # the query was cached
-      return if 'CACHE' == values[:name]
+      return if "CACHE" == values[:name]
 
       self.class.log_all << sql
       self.class.log << sql unless ignore =~ sql
@@ -46,7 +46,7 @@ class CreatingForeignKeysTest < ActiveSupport::TestCase
   end
 
   # ref: https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/test_case.rb#L122
-  ActiveSupport::Notifications.subscribe('sql.active_record', SQLCounter.new)
+  ActiveSupport::Notifications.subscribe("sql.active_record", SQLCounter.new)
 
   # ref: https://github.com/rails/rails/blob/4-2-stable/activerecord/test/cases/test_case.rb#L49L61
   def assert_queries(num = 1, options = {})
