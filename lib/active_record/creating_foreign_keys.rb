@@ -3,11 +3,7 @@
 require "active_support/lazy_load_hooks"
 
 ActiveSupport.on_load(:active_record) do
-  require "active_record/creating_foreign_keys/schema_creation"
-  require "active_record/creating_foreign_keys/schema_statements"
-  # TODO: Should research the not `require` way
-  require "active_record/connection_adapters/abstract_mysql_adapter"
+  require "active_record/connection_adapters/mysql2/creating_foreign_keys/connection_specification/resolver"
 
-  ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::SchemaCreation.prepend(ActiveRecord::CreatingForeignKeys::SchemaCreation)
-  ActiveRecord::ConnectionAdapters::AbstractAdapter.prepend(ActiveRecord::CreatingForeignKeys::SchemaStatements)
+  ActiveRecord::ConnectionAdapters::ConnectionSpecification::Resolver.prepend(ActiveRecord::ConnectionAdapters::Mysql2::CreatingForeignKeys::ConnectionSpecification::Resolver)
 end
