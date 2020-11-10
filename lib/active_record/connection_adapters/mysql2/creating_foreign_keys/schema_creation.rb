@@ -7,6 +7,8 @@ module ActiveRecord
         module SchemaCreation
           private
             def visit_TableDefinition(o)
+              return super(o) if o.foreign_keys.empty?
+
               name = o.name
               create_sql = +"CREATE#{' TEMPORARY' if o.temporary} TABLE #{quote_table_name(name)} "
 
