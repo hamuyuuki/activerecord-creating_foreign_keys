@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activerecord-creating_foreign_keys (0.1.1)
+    activerecord-creating_foreign_keys (0.2.0)
       activerecord (~> 4.2.11)
       activesupport (~> 4.2.11)
 
