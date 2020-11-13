@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "active_record/creating_foreign_keys"
+require "activerecord/creating_foreign_keys"
 
 module Dummy
   class Application < Rails::Application

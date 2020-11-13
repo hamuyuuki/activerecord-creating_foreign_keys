@@ -20,7 +20,7 @@ jobs:
     - name: Check deployable a package
       id: checking-deployable-package
       run: |
-        package_version=v$(ruby -e 'require "./lib/active_record/creating_foreign_keys/version.rb"
+        package_version=v$(ruby -e 'require "./lib/activerecord/creating_foreign_keys/version"
                            print ActiveRecord::CreatingForeignKeys::VERSION')
         new_tag=$(if [ ! $(git tag | grep $package_version) ]; then echo $package_version; fi)
         echo ::set-output name=new_tag::$new_tag
